@@ -15,8 +15,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         itemIndicator.procent = 0.8f
         itemIndicatorMonth.procent = 0.4f
         indicatorElektr.procent=0.1f
+
         itemIndicator.textSize = 40f
-        itemIndicatorMonth.repeatLongLine = 12
+        itemIndicatorMonth.repeatLongLine = 10
         val textsLongLine = ArrayList<String>()
         textsLongLine.add("окт")
         textsLongLine.add("ноя")
