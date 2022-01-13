@@ -18,6 +18,7 @@ class CustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet
     var textSize = 40f
     var hasLines = true
     var procent = 0.5f
+
     var colorFigure = Color.GREEN
 
     private val paintBg = Paint().apply {
@@ -46,16 +47,17 @@ class CustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet
     }
 
     private fun paintLines(canvas: Canvas) {
-        longLineText.add("окт")
-        longLineText.add("ноя")
-        longLineText.add("дек")
         longLineText.add("янв")
         longLineText.add("фев")
-        longLineText.add("фев")
-        longLineText.add("фев")
-        longLineText.add("фев")
-        longLineText.add("фев")
-        longLineText.add("фев")
+        longLineText.add("мар")
+        longLineText.add("апр")
+        longLineText.add("май")
+        longLineText.add("июн")
+        longLineText.add("июл")
+        longLineText.add("авг")
+        longLineText.add("сен")
+        longLineText.add("ноя")
+        longLineText.add("дек")
         for (i in 0 until 100) {
             if (i % repeatLongLine == 0) {
                 canvas.drawLine(i * 25f, 100f, i * 25f, 220f, paint)
