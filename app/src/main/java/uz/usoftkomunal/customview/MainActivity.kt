@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         indicatorElektr.hasLines = false
         itemIndicator.procent = 0.8f
         itemIndicatorMonth.procent = 0.4f
-        indicatorElektr.procent=0.1f
+        indicatorElektr.procent = 0.1f
 
         itemIndicator.textSize = 40f
         itemIndicatorMonth.repeatLongLine = 10
@@ -23,15 +23,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         textsLongLine.add("ноя")
         textsLongLine.add("дек")
         textsLongLine.add("янв")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
-        textsLongLine.add("фев")
         textsLongLine.add("фев")
         textsLongLine.add("фев")
         itemIndicatorMonth.longLineText.addAll(textsLongLine)

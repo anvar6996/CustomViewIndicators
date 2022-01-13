@@ -48,16 +48,20 @@ class CustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet
         }
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun paintLines(canvas: Canvas) {
-        setTextaForLongLines()
-        for (i in 0 until 100) {
+//        setTextaForLongLines()
+        for (i in 0 until getScreenWidth()) {
             if (i % repeatLongLine == 0) {
+                paint.color = Color.WHITE
                 canvas.drawLine(i * 25f, 100f, i * 25f, 220f, paint)
-                if (longLineText.size >= count) {
+                if (longLineText.size >= count + 2) {
                     canvas.drawText(longLineText[count], i * 25f, 250f, paint)
                     count++
                 }
             } else {
+
+                paint.color = Color.LTGRAY
                 canvas.drawLine(i * 25f, 100f, i * 25f, 150f, paint)
             }
         }
@@ -96,17 +100,17 @@ class CustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet
         widthLabel = width
     }
 
-    fun setTextaForLongLines() {
-        longLineText.add("янв")
-        longLineText.add("фев")
-        longLineText.add("мар")
-        longLineText.add("апр")
-        longLineText.add("май")
-        longLineText.add("июн")
-        longLineText.add("июл")
-        longLineText.add("авг")
-        longLineText.add("сен")
-        longLineText.add("ноя")
-        longLineText.add("дек")
-    }
+//    fun setTextaForLongLines() {
+//        longLineText.add("янв")
+//        longLineText.add("фев")
+//        longLineText.add("мар")
+//        longLineText.add("апр")
+//        longLineText.add("май")
+//        longLineText.add("июн")
+//        longLineText.add("июл")
+//        longLineText.add("авг")
+//        longLineText.add("сен")
+//        longLineText.add("ноя")
+//        longLineText.add("дек")
+//    }
 }
