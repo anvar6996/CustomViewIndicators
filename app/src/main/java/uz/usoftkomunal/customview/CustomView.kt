@@ -2,6 +2,7 @@ package uz.usoftkomunal.customview
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -16,7 +17,7 @@ class CustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet
     var stroke = 0
     var textSize = 40f
     var hasLines = true
-    var withBg = 400f
+    var procent = 0.5f
     var colorFigure = Color.GREEN
 
     private val paintBg = Paint().apply {
@@ -71,20 +72,28 @@ class CustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun paintBg(canvas: Canvas) {
         when {
-            withBg < 500f && withBg >= 200 -> {
+            procent < 0.5f && procent >= 0.2f -> {
                 paintBg.color = Color.YELLOW
             }
-            withBg < 200f -> {
+            procent < 0.2f -> {
                 paintBg.color = Color.RED
             }
             else -> {
                 paintBg.color = Color.GREEN
             }
         }
-        canvas.drawRect(0f, 0f, withBg, 500f, paintBg)
+
+        canvas.drawRect(0f, 0f, getScreenWidth() * procent, 500f, paintBg)
         val draw = resources.getDrawable(R.drawable.ic__label)
-        canvas.drawBitmap(draw!!.toBitmap(36, 50, Bitmap.Config.ALPHA_8), withBg - 20f, 40f, paint)
+        canvas.drawBitmap(draw!!.toBitmap(36, 50, Bitmap.Config.ALPHA_8), getScreenWidth() * procent, 40f, paint)
     }
 
+    fun getScreenWidth(): Int {
+        return Resources.getSystem().displayMetrics.widthPixels
+    }
+
+    fun getScreenHeight(): Int {
+        return Resources.getSystem().displayMetrics.heightPixels
+    }
 
 }

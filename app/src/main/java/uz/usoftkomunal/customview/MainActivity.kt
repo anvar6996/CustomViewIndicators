@@ -12,8 +12,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val itemIndicatorMonth = findViewById<CustomView>(R.id.dateOnMonth)
         val indicatorElektr = findViewById<CustomView>(R.id.indicatorElektr)
         indicatorElektr.hasLines = false
-        itemIndicator.withBg = 800f
-        itemIndicatorMonth.withBg = 150f
+        itemIndicator.procent = 0.8f
+        itemIndicatorMonth.procent = 0.4f
+        indicatorElektr.procent=0.1f
         itemIndicator.textSize = 40f
         itemIndicatorMonth.repeatLongLine = 12
         val textsLongLine = ArrayList<String>()
